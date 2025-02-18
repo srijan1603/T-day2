@@ -1,0 +1,33 @@
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+    int vehiclecount;
+    char vehicletype[10];
+    printf("Enter number of vehicles:");
+    scanf("%d",&vehiclecount);
+    float collection = 0;
+
+    for(int i=1; i<=vehiclecount; i++)
+    {
+        printf("Enter vehicle type:");
+        scanf("%s",vehicletype);
+        
+        if(strcmp(vehicletype,"car") == 0)
+        {
+            collection += 50;
+        }
+        else if(strcmp(vehicletype,"truck") == 0)
+        {
+            collection += 100;   
+        }
+        else if(strcmp(vehicletype,"bike") == 0)
+        {
+            collection += 20;   
+        }
+    }
+
+    printf("Total toll collection: %.2f\n", collection);
+    return 0;
+}
