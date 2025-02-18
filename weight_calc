@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main() 
+{
+    int productcount, weight;
+    int acceptedcount = 0, rejectedcount = 0; 
+    printf("Enter number of products: ");
+    scanf("%d", &productcount);
+
+    for (int i = 1; i <= productcount; i++)
+    {
+        printf("Enter weight (in grams) of product %d: ", i);
+        scanf("%d", &weight);
+        if (weight >= 950 && weight <= 1050) 
+        {
+            acceptedcount++;
+        } 
+        else 
+        {
+            rejectedcount++;
+        }
+    }
+
+    printf("Accepted products: %d\n", acceptedcount);
+    printf("Rejected products: %d\n", rejectedcount);
+
+    return 0;
+}
