@@ -1,26 +1,48 @@
-#include<stdio.h>
-void readDetails(float* p_salary, int* p_score, int* p_experience)
+#include <stdio.h>
+void readDetails(float* p_salary, int* p_score, int* p_experience) 
 {
-printf("Enter Salary:");
-scanf("%f", p_salary);
-printf("Enter Credit Score:");
-scanf("%d", p_score);
-printf("Enter Experience:");
-scanf("%d", p_experience);
+	printf("Enter Salary: ");
+	scanf("%f", p_salary);
+	printf("Enter Credit Score: ");
+	scanf("%d", p_score);
+	printf("Enter Experience (Years): ");
+	scanf("%d", p_experience);
+	getc(stdin);
 }
-int isEligible(float salary, int score, int experience) {
-return ((salary >= 30000) && (score >= 750) & (experience >= 2));
+
+
+int isEligible(float salary, int score, int experience)
+{
+	return ((salary >= 30000) && (score >= 750) && (experience >= 2));
 }
-int main() {
-float salary;
-int score;
-int experience;
-readDetails(&salary, &score, &experience);
-if(isEligible(salary, score, experience)){
-printf("Loan Approved");
+
+
+void task() 
+{
+	float salary;
+	int score;
+	int experience;
+	readDetails(&salary, &score, &experience);
+	if (isEligible(salary, score, experience))
+	{
+		printf("Loan Approved\n");
+	} 
+	else 
+	{
+		printf("Loan Rejected\n");
+	}
 }
-else {
-printf("Loan Rejected");
+
+int main() 
+{
+	int choice;
+	do 
+	{
+		task();
+		printf("Are you sure to continue (1-continue, 0-exit)? ");
+		scanf("%d", &choice);
+	} 
+	while (choice == 1);
+	return 0;
 }
-return 0;
-}
+
